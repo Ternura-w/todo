@@ -1,0 +1,213 @@
+@import url(reset.css);
+@import url(bootstrap.css);
+body {
+  background-color: #d4d1d1c9;
+}
+html {
+  /* 设置1rem=10px */
+  font-size: 62.5%;
+}
+.container {
+  width: 65%;
+  height: 58rem;
+  margin: 0 auto;
+  background-color: #f3f2f2;
+  border: 1px solid #E9E9E9;
+  box-shadow: 1rem 1rem 1rem rgb(172, 170, 170);
+  padding: 1.5rem 1rem;
+}
+.h1 {
+  text-align: center;
+  font-size: 6.5rem;
+  font-weight: bold;
+  color: gray;
+  display: block;
+  width: 100%;
+}
+.card {
+  width: 85%;
+  height: 100%;
+  margin: 0 auto;
+}
+.card-content,
+.card-action {
+  width: 100%;
+}
+.task-icon {
+  color: goldenrod;
+  font-size: 2.6rem;
+}
+.content-row {
+  width: 100%;
+  margin: 2.5rem auto 0;
+}
+.new,
+#task-title {
+  color: #6e6d6d;
+  font-size: 1.8rem;
+  font-weight: bold;
+}
+#task {
+  display: block;
+  width: 100%;
+  height: 5rem;
+  font-size: 2rem;
+  line-height: 4rem;
+  padding: 2rem 1.5rem;
+  color: #545454;
+  font-weight: bold;
+  background-color: #f3f2f2;
+  border: 2px solid gray;
+  border-radius: 01rem;
+  margin: 1rem 0 1rem;
+}
+input::-webkit-input-placeholder{        
+  color:#E6E6E6; 
+}        
+input::-moz-placeholder{   /* Mozilla Firefox 19+ */ 
+  color:#E6E6E6;       
+}        
+input:-moz-placeholder{    /* Mozilla Firefox 4 to 18 */            
+  color:#E6E6E6;        
+}        
+input:-ms-input-placeholder{  /* Internet Explorer 10-11 */             
+  color:#E6E6E6;        
+}
+#task:hover {
+  border: 2px solid goldenrod;
+}
+.card-action {
+  margin: 3.5rem auto 0;
+  position: relative;
+}
+.action-icon {
+  color: #C0C7CB;
+  font-size: 2.6rem;
+  display: inline;
+}
+.input-field {
+  position: relative;
+}
+#filter {
+  display: block;
+  background-color: #F3F2F2;
+  border-bottom: 2px solid #808080;
+  width: 100%;
+  font-size: 1.6rem;
+  font-weight: bolder;
+  padding: 0.5rem 1rem;
+}
+#filter:hover {
+  border-bottom: 2px solid #84898b;
+}
+.collection {
+  position: relative;
+  margin: 1rem 0;
+  width: 100%;
+  height: 20rem;
+  border: 0.5px solid gray;
+  padding: 1rem;
+  overflow-y: scroll;
+}
+.recycle {
+  margin: 1rem 0;
+  width: 100%;
+  height: 20rem;
+  border: 0.5px solid gray;
+  padding: 1rem;
+  overflow-y: scroll;
+  position: relative;
+  top: -5rem;
+}
+.hidden {
+  opacity: 0;
+}
+.recycle li,
+.collection li {
+ display: flex;
+ line-height: 2.5rem !important;
+ height: 3.5rem;
+}
+.hide {
+  display: none;
+}
+.hidden {
+  display: none;
+}
+.collection li:hover {
+  background-color: #aaadad65;
+  color: rgb(153, 147, 147);
+}
+.finish-icon {
+  flex-grow: 1;
+  cursor: pointer;
+  font-size: 2rem;
+  text-align: center;
+  color: rgb(247, 190, 46);
+  margin-top: 0.2rem;
+}
+.finished-icon {
+  color: #7f8c8d;
+}
+.finish-icon:hover {
+  color: rgb(177, 135, 30);
+}
+
+.task {
+  flex-grow: 18;
+  line-height: 3rem;
+  font-size: 1.6rem;
+  color: #444;
+  font-weight: bold;
+}
+
+.finish {
+  text-decoration: line-through;
+  color: #7f8c8d;
+  font-style: italic;
+  font-size: 1.6rem;
+  font-weight: lighter;
+}
+
+.delete-icon {
+  flex-grow: 1;
+  cursor: pointer;
+  color: #7f8c8d;
+  font-size: 1.6rem;
+  text-align: center;
+  margin-top: 0.5rem;
+}
+.delete-icon:hover {
+  color: goldenrod;
+}
+/* 底部条件显示 */
+.foot {
+  display: flex;
+  justify-content: space-between;
+  flex-grow: 5;
+  width: 100%;
+  margin: 1.5rem auto 0;
+}
+.span-count {
+  width: 20%;
+  display: block;
+  font-size: 1.6rem;
+  color: #333;
+}
+.circums {
+  width:30%;
+  display: flex;
+  justify-content: space-between;
+}
+.circums li{
+  padding: 0 0.5rem;
+  cursor: pointer;
+  border: 1px solid #efd5d500;
+  box-sizing: border-box; /* 默认值是content-box */
+}
+.circums .selected {
+  border: 1px solid #EFD5D5;
+  border-radius: 0.5rem;
+}
+
+

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="fonts.css">
+  <link rel="stylesheet" href= "index.css">
+</head>
+<body>
+  <h1 class="h1">Todo List</h1>
+  <div class="container">
+    <div id="main" class="card">  
+      <!-- 添加 -->
+      <div class="card-content">
+        <div class="content-row">
+          <form action="" id="task-form">
+            <div class="input-field">
+              <i class="iconfont task-icon">&#xe6ee;</i>
+              <label class="new" for="task">new todo</label>
+              <input placeholder="What needs to be done?" type="text" name="task" id="task">
+            </div>
+            <input type="submit" value="add todo" class="btn btn-warning">
+          </form>
+        </div>
+      </div>
+      <!-- 任务列表 -->
+      <div class="card-action">
+        <p>
+          <i class="iconfont action-icon">&#xe627;</i>
+          <span id="task-title">my todo</span>
+        </p>
+        <div class="input-field">
+          <input type="text" placeholder="filter todo?" name="filter" id="filter">
+        </div>
+        <ul class="collection">
+          <li class="collection-item">
+            <i class="iconfont finish-icon">&#xe653;</i>
+            <span class="task">任务一</span>
+            <i class="iconfont delete-icon">&#xe612;</i>
+          </li>
+          <li class="collection-item">
+            <i class="iconfont finish-icon">&#xe653;</i>
+            <span class="task">任务一</span>
+            <i class="iconfont delete-icon">&#xe612;</i>
+          </li>
+          <li class="collection-item">
+            <i class="iconfont finish-icon">&#xe653;</i>
+            <span class="task">任务二</span>
+            <i class="iconfont delete-icon">&#xe612;</i>
+          </li>
+          <li class="collection-item">
+            <i class="iconfont finish-icon">&#xe653;</i>
+            <span class="task">任务二</span>
+            <i class="iconfont delete-icon">&#xe612;</i>
+          </li>
+        </ul>
+        <!-- <button class="clear-tasks btn btn-primary">delete all</button> -->
+        <ul class="recycle hidden"></ul>
+      </div>
+      <!-- 按条件显示 -->
+      <div class="foot">
+        <span class="span-count">
+          <strong>0</strong> items 
+        </span>
+        <ul class="circums">
+          <li class = "selected" id="all-tasks">All</li>
+          <li id = "active-tasks">Active</li>
+          <li id = "com-tasks">Completed</li>
+          <li id = "del-tasks">Deleted</li>
+        </ul>
+      </div>
+    </div>  
+  </div> 
+  
+  <script src="main.js"></script>
+</body> 
+</html>         
