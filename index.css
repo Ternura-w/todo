@@ -1,40 +1,280 @@
 @import url(reset.css);
-@import url(bootstrap.css);
+
 body {
   background-color: #d4d1d1c9;
 }
 html {
   /* 设置1rem=10px */
   font-size: 62.5%;
+  height: 100%;
 }
-.container {
-  width: 65%;
-  height: 58rem;
-  margin: 0 auto;
-  background-color: #f3f2f2;
-  border: 1px solid #E9E9E9;
-  box-shadow: 1rem 1rem 1rem rgb(172, 170, 170);
-  padding: 1.5rem 1rem;
+
+body {
+  height: 100%;
+  overflow: hidden;
 }
-.h1 {
+
+.canvas-box {
+  position: fixed;
+  left: 0;
+  top: 0;
+  z-index: -1;
+  width: 100%;
+  height: 100%;
+}
+#canvas {
+  width: 100%;
+  height: 100%;
+}
+.box {
+  position: absolute;
+  z-index: 10;
+  color:#fff;
+  font-family: Arial;
+  left: 50%;
+  top:50%;
+  transform: translate(-50%,-50%);
   text-align: center;
-  font-size: 6.5rem;
+}
+  
+.canvas-box a:link,
+.canvas-box a:hover,
+.canvas-box a:visited,
+.canvas-box a:active {
+  text-decoration: none;
+  color: inherit;
+  display: block;
+}
+/* 登录注册页面 */
+.loginPage {
+  width: 25%;
+  height: 50%;
+  position: absolute;
+  right: 38%;
+  top: 20%;
+  display: none;
+  background-color: #b48a8a00;
+  border-radius: 3rem;
+}
+
+.panel {
+  width: 100%;
+  position: absolute;
+  right: 0;
+  top: 0;
+  display: flex;
+  justify-content: center;
+  margin: 15% 0 0;
+  background-color: rgba(250, 128, 114, 0);
+}
+
+.switch span{
+ color: #ccc;
+ font-size: 3rem;
+ cursor: pointer;
+}
+.switch span.active {
+ color: #FFD7CF;
+}
+
+.loginPage form {
+  width: 20rem;
+  margin: 3rem 0 0;
+}
+
+.loginPage form .input {
+  opacity: 1;
+  height: 3rem;
+  position: relative;
+  width: 100%;
+  margin: 2rem 0;
+  transition: 0.6s;
+}
+
+.loginPage .input input {
+  outline: none;
+  width: 100%;
+  border: none;
+  border-bottom: 1px solid #FFD7CF;
+  font-size: 1.8rem;
+  background-color: #03020200;
+  color: #fff;
+}
+
+.loginPage .input::after {
+  /* CSS表达式 attr() 用来获取选择到的元素的某一HTML属性值，
+  并用于其样式。它也可以用于伪元素，属性值采用伪元素所依附的元素。
+  attr() 表达式可以用于任何CSS属性。  */
+  content: attr(placeholder);
+  position: absolute;
+  left: 0;
+  top: -25%;
+  font-size: 1.8rem;
+  color: #FFD7CF;
+  transition: 0.3s;
+}
+
+.loginPage .input.focus::after {
+  top: -70%;
+  font-size: 1.5rem;
+}
+
+.loginPage form span {
+  display: block;
+  color: #FFD7CF;
+  font-size: 1.4rem;
+  width: 30%;
+  position: relative;
+  z-index: 2;
+  cursor: pointer;
+}
+
+.loginPage form span:hover {
+ color: #c09086;
+}
+
+.loginPage .logina,
+.loginPage .signa {
+  border: none;
+  outline: none;
+  margin: 2rem 0 0;
+  width: 18rem;
+  height: 4rem;
+  border-radius: 3rem;
+  background: linear-gradient(90deg,rgb(174, 158, 216),#dac0bb);
+  box-shadow: 0 0 5px #FFD7CF;
+  cursor: pointer;
+  color: #E6E6E6;
+  font-size: 1.6rem;
+  text-align: center;
+  line-height: 4rem;
+}
+
+.loginPage .login-mes {
+  color: gray;
+  margin-top: 1rem;
+  width: 25rem;
+  height: 4rem;
+  font-size: 1.5rem;
+  line-height: 4rem;
+  display: block;
+  font-size: 1.5rem;
+}
+
+/* todo页面 */
+.todoPage {
+  width: 100%;
+  height: 100%;
+  display: flex;
+}
+
+.sidebar {
+  width: 20%;
+  height: 100%;
+  display: flex;
+  position: absolute;
+  right: 0;
+  flex-direction: row-reverse;
+}
+.sidebara {
+  flex-direction: row;
+}
+.userpage {
+  width: 85%;
+  height: 100%;
+  background-color: #d8d6d6af;
+  text-align: center;
+  overflow: hidden;
+}
+
+.avatar {
+  width: 20rem;
+  height: 20rem;
+  background-color: rgba(135, 207, 235, 0);
+  margin: 30% auto 2rem;
+  text-align: center;
+  line-height: 18rem;
+  border-radius: 100%;
+  border: 5px solid #ffd7cfab;
+  cursor: pointer;
+}
+.avatar .iconfont{
+  font-size: 14rem;
+  color: #efd5d5a8;
+}
+#usera {
+  color: #333;
+  font-size: 1.8rem;
+  overflow: hidden;
+}
+
+.userpage button {
+  width: 55%;
+  height: 4rem;
+  border-radius: 2rem;
+  line-height: 2.5rem;
+  color: rgb(71, 69, 69);
+  background: linear-gradient(45deg, #f3c2ae, #efd5d5a8);
+  overflow: hidden;
+  color: #333;
+  font-size: 1.6rem;
+  margin: 4rem auto;
+}
+
+.userpage button .iconfont {
+  font-size: 2.2rem;
+  margin-right: 0.5rem;
+}
+
+.sidebtn {
+  width: 14%;
+  height: 10%;
+  background-color: rgba(135, 207, 235, 0);
+  text-align: center;
+  cursor: pointer;
+  position: relative;
+  top: 0.5rem;
+  transition: 2s;
+}
+
+.sidebtn .iconfont {
+  font-size: 3rem;
+  color: #FFD7CF;
+}
+
+.todoPage .container {
+  width: 55%;
+  height: 100%;
+  position: relative;
+  left: 0%;
+}
+
+.todoPage #main {
+  width: 100%;
+  height: 58rem;
+  background-color: #d8d6d6af;
+  border: 1px solid #aaa8a8;
+  box-shadow: 0rem 0rem 3rem rgb(172, 170, 170);
+  padding: 1.5rem 4rem;
+  margin-top: 5rem;
+  border-radius: 3rem;
+}
+
+.todoPage .h1 {
+  text-align: center;
+  font-size: 8rem;
   font-weight: bold;
   color: gray;
   display: block;
   width: 100%;
 }
-.card {
-  width: 85%;
-  height: 100%;
-  margin: 0 auto;
-}
+
 .card-content,
 .card-action {
   width: 100%;
 }
 .task-icon {
-  color: goldenrod;
+  color: #FFD7CF;
   font-size: 2.6rem;
 }
 .content-row {
@@ -43,8 +283,8 @@ html {
 }
 .new,
 #task-title {
-  color: #6e6d6d;
-  font-size: 1.8rem;
+  color: #FFD7CF;
+  font-size: 2rem;
   font-weight: bold;
 }
 #task {
@@ -56,49 +296,73 @@ html {
   padding: 2rem 1.5rem;
   color: #545454;
   font-weight: bold;
-  background-color: #f3f2f2;
-  border: 2px solid gray;
-  border-radius: 01rem;
+  background-color: #6e6d6d00;
+  border: none;
+  border-bottom: 2px solid rgb(172, 170, 170);
   margin: 1rem 0 1rem;
+  outline: none;
 }
-input::-webkit-input-placeholder{        
+.todoPage input::-webkit-input-placeholder{        
   color:#E6E6E6; 
 }        
-input::-moz-placeholder{   /* Mozilla Firefox 19+ */ 
+.todoPage input::-moz-placeholder{   /* Mozilla Firefox 19+ */ 
   color:#E6E6E6;       
 }        
-input:-moz-placeholder{    /* Mozilla Firefox 4 to 18 */            
+.todoPage input:-moz-placeholder{    /* Mozilla Firefox 4 to 18 */            
   color:#E6E6E6;        
 }        
-input:-ms-input-placeholder{  /* Internet Explorer 10-11 */             
+.todoPage input:-ms-input-placeholder{  /* Internet Explorer 10-11 */             
   color:#E6E6E6;        
 }
 #task:hover {
-  border: 2px solid goldenrod;
+  border-bottom: 2px solid #FFD7CF;
 }
+
+#task-form {
+  position: relative;
+}
+
+.btnAdd {
+  width: 4.5rem;
+  height: 4.5rem;
+  border-radius: 100%;
+  color: #fff;
+  font-size: 3rem;
+  line-height: 2.5rem;
+  text-align: center;
+  background-color: #ffd7cf93;
+  position: absolute;
+  top: 40%;
+  right: 0;
+}
+
 .card-action {
   margin: 3.5rem auto 0;
   position: relative;
+  height: 63%;
 }
+
 .action-icon {
-  color: #C0C7CB;
+  color: #FFD7CF;
   font-size: 2.6rem;
   display: inline;
 }
+
 .input-field {
   position: relative;
 }
 #filter {
   display: block;
-  background-color: #F3F2F2;
-  border-bottom: 2px solid #808080;
+  background-color: #6d6c6c00;
+  border-bottom: 2px solid #ACAAAA;
   width: 100%;
-  font-size: 1.6rem;
-  font-weight: bolder;
+  font-size: 1.5rem; 
   padding: 0.5rem 1rem;
+  color: #fff;
+  outline: none;
 }
 #filter:hover {
-  border-bottom: 2px solid #84898b;
+  border-bottom: 2px solid #FFD7CF;
 }
 .collection {
   position: relative;
@@ -108,16 +372,18 @@ input:-ms-input-placeholder{  /* Internet Explorer 10-11 */
   border: 0.5px solid gray;
   padding: 1rem;
   overflow-y: scroll;
+  border-radius: 5px;
 }
 .recycle {
-  margin: 1rem 0;
+  margin: 5rem 0 0;
   width: 100%;
-  height: 20rem;
+  height: 80%;
   border: 0.5px solid gray;
   padding: 1rem;
   overflow-y: scroll;
   position: relative;
   top: -5rem;
+  border-radius: 5px;
 }
 .hidden {
   opacity: 0;
@@ -127,6 +393,7 @@ input:-ms-input-placeholder{  /* Internet Explorer 10-11 */
  display: flex;
  line-height: 2.5rem !important;
  height: 3.5rem;
+ margin-bottom: 0.5rem;
 }
 .hide {
   display: none;
@@ -143,14 +410,14 @@ input:-ms-input-placeholder{  /* Internet Explorer 10-11 */
   cursor: pointer;
   font-size: 2rem;
   text-align: center;
-  color: rgb(247, 190, 46);
+  color: #FFD7CF;
   margin-top: 0.2rem;
 }
 .finished-icon {
   color: #7f8c8d;
 }
 .finish-icon:hover {
-  color: rgb(177, 135, 30);
+  color: #e79483;
 }
 
 .task {
@@ -160,25 +427,28 @@ input:-ms-input-placeholder{  /* Internet Explorer 10-11 */
   color: #444;
   font-weight: bold;
 }
-
+.task input {
+  box-sizing: border-box;
+  border:  0.5px solid grey;
+  background-color: #F3F2F2;
+}
 .finish {
   text-decoration: line-through;
-  color: #7f8c8d;
-  font-style: italic;
-  font-size: 1.6rem;
+  color: #aebdbe;
+  font-size: 1.5rem;
   font-weight: lighter;
 }
 
 .delete-icon {
   flex-grow: 1;
   cursor: pointer;
-  color: #7f8c8d;
+  color: #FFD7CF;
   font-size: 1.6rem;
   text-align: center;
   margin-top: 0.5rem;
 }
 .delete-icon:hover {
-  color: goldenrod;
+  color: #e09a8c;
 }
 /* 底部条件显示 */
 .foot {
@@ -200,14 +470,17 @@ input:-ms-input-placeholder{  /* Internet Explorer 10-11 */
   justify-content: space-between;
 }
 .circums li{
-  padding: 0 0.5rem;
+  padding: 0.5rem;
   cursor: pointer;
   border: 1px solid #efd5d500;
   box-sizing: border-box; /* 默认值是content-box */
+  font-size: 1.4rem;
 }
 .circums .selected {
   border: 1px solid #EFD5D5;
   border-radius: 0.5rem;
+  background-color: rgb(112, 108, 108);
+  color: rgb(202, 201, 201);
 }
 
 
