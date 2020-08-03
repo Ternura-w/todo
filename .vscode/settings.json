@@ -1,8 +1,0 @@
-{
-  "liveServer.settings.AdvanceCustomBrowserCmdLine": "",
-  //powser mode
-  "powermode.enabled": true,         //是否开启    
-  "powermode.enableShake": false,    //是否抖动   
-  "powermode.presets": "flames",
-  "liveServer.settings.port": 5501
-}
